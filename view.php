@@ -12,7 +12,6 @@
 	}
 
 	?>
-	<div id="msgs"></div>
 	<table class="table table-striped">
 		<tr class="info">
 			<th>Name</th>
@@ -48,13 +47,11 @@
 	    	{	
 	    		$("#table_content").html(data); 
 	    	});
-	    	$('#msgs').fadeOut(2000).html(data);
 	    }
 	});
 }); // delete close
 
 	$('.edit').click(function() {
-		alert('clicked');
 		var id = $('.edit').attr('id');
 		$.ajax({
 	    url : "edit.php",
@@ -62,10 +59,9 @@
 	    data : { id: id },
 	    success: function(data, status,  xhr)
 	    {
-	    	$('#records_content').fadeOut(2000).html('loading');
-	    	$.get("view.php", function(data)
+	    	$.get("edit.php", function(data)
 	    	{
-	    		$("#table_content").html(data); 
+	    		$("#link-add").html(data); 
 	    	});
 	    }
 	});
