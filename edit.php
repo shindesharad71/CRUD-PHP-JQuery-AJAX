@@ -30,7 +30,37 @@
 			</div>
 			<div class="form-group col-md-3">
 			<button type="button" class="btn btn-primary update" id="<?php echo $row['id']; ?>" name="update">Update Record</button>
-			<button type="button" href="javascript:void(0);" class="btn btn-default" id="cancel" name="add" onclick="$('#link-add').slideUp(400);">Cancel</button>
+			<button type="button" href="javascript:void(0);" class="btn btn-default" id="cancel" name="add" onclick="$('#link-add').slideUp(400);$('#show-add').show(700);">Cancel</button>
 		</div>
 	<?php
 	}
+	?>
+
+<script type="text/javascript">
+	$('.update').click(function() {
+		var id = $(this).attr('id');
+        var name = $('#name').val();
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        $.ajax({
+            url: "update.php",
+            type: "POST",
+            data: { id: id, name: name, username: username, password: password },
+            success: function(data, status, xhr) {
+                $('#name').val('');
+                $('#username').val('');
+                $('#password').val('');
+                $('#records_content').fadeOut(1100).html(data);
+                $.get("view.php", function(html) {
+                    $("#table_content").html(html);
+                });
+                $('#records_content').fadeOut(1100).html(data);
+            },
+            complete: function() {
+                $('#link-add').hide();
+                $('#show-add').show(700);
+            }
+        });
+    }); // update close
+</script>

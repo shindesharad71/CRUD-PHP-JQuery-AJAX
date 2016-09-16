@@ -38,7 +38,7 @@
 ?>
 <script type="text/javascript">
 	$('.del').click(function() {
-		var id = $('.del').attr('id');
+		var id = $(this).attr('id');
 		$.ajax({
 	    url : "delete.php",
 	    type: "POST",
@@ -68,4 +68,5 @@
 	    }
 	});
 }); // edit close
+
 </script>
