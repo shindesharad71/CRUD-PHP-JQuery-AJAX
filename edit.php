@@ -16,7 +16,7 @@
 	while($row = mysqli_fetch_assoc($result))
 	{
 		?>
-		<div id="link-add" class="form-inline">
+		<div class="form-inline">
 			<div class="form-group col-md-3">
 				<input type="text" name="name" id="name" value="<?php echo $row['name']; ?>" placeholder="Name" class="form-control input-lg" required />
 			</div>

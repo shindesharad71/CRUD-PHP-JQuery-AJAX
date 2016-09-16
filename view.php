@@ -8,6 +8,7 @@
 	$rows = mysqli_affected_rows($con);
 	if($rows == 0)
 	{
+		echo '<div class="text-center">no records found! click on add button to add records</div>';
 		die();
 	}
 
@@ -41,8 +42,9 @@
 	    url : "delete.php",
 	    type: "POST",
 	    data : { id: id },
-	    success: function(data, status,  xhr)
+	    success: function(data)
 	    {
+	    	$('#records_content').fadeOut(1100).html(data);
 	    	$.get("view.php", function(data)
 	    	{	
 	    		$("#table_content").html(data); 
@@ -57,7 +59,7 @@
 	    url : "edit.php",
 	    type: "POST",
 	    data : { id: id },
-	    success: function(data, status,  xhr)
+	    success: function(data)
 	    {
 	    	$.get("edit.php", function(data)
 	    	{
