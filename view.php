@@ -15,6 +15,7 @@
 	?>
 	<table class="table table-striped">
 		<tr class="info">
+			<th>ID</th>
 			<th>Name</th>
 			<th>Username</th>
 			<th>Password</th>
@@ -24,14 +25,14 @@
 
 	while($row = mysqli_fetch_assoc($result))
 	{
-		?>
+		echo '
 		<tr>
-			<td><?php echo $row['name']; ?></td>
-			<td><?php echo $row['username']; ?></td>
-			<td><?php echo $row['password']; ?></td>
-			<td><button id="<?php echo $row['id']; ?>" class="edit">Edit</button> | <button class="del" id="<?php echo $row['id']; ?>">Delete</button></td>
-		</tr>
-	<?php
+			<td>'.$row['id'].'</td>
+			<td>'.$row['name'].'</td>
+			<td>'.$row['username'].'</td>
+			<td>'.$row['password'].'</td>
+			<td><button id="'.$row['id'].'" class="edit btn btn-info">Edit</button> <button class="del btn btn-danger" id="'.$row['id'].'">Delete</button></td>
+		</tr>';
 	}
 		echo '</table>';
 ?>
@@ -54,17 +55,16 @@
 }); // delete close
 
 	$('.edit').click(function() {
-		var id = $('.edit').attr('id');
+		var id = $(this).attr('id');
+		$('#show-add').hide();
 		$.ajax({
-	    url : "edit.php",
-	    type: "POST",
+	    url : 'edit.php',
+	    type: 'POST',
 	    data : { id: id },
 	    success: function(data)
 	    {
-	    	$.get("edit.php", function(data)
-	    	{
-	    		$("#link-add").html(data); 
-	    	});
+    		$("#link-add").html(data);
+    		$('#link-add').show();
 	    }
 	});
 }); // edit close

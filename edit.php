@@ -2,13 +2,15 @@
 
 	require_once('dbconfig.php');
 	global $con;
-	
 	$id = $_POST['id'];
 
 	if(empty($id))
 	{
+		?><div class="text-center">no records found under this selection <a href="#" onclick="$('#link-add').hide();$('#show-add').show(700);">Hide this</a></div>
+		<?php
 		die();
 	}
+
 	$query = "SELECT * FROM userinfo where id='$id'";
 	if (!$result = mysqli_query($con, $query)) {
 	        exit(mysqli_error($con));
@@ -16,7 +18,7 @@
 	while($row = mysqli_fetch_assoc($result))
 	{
 		?>
-		<div class="form-inline">
+		<div class="form-inline" id="edit-data">
 			<div class="form-group col-md-3">
 				<input type="text" name="name" id="name" value="<?php echo $row['name']; ?>" placeholder="Name" class="form-control input-lg" required />
 			</div>
@@ -27,7 +29,7 @@
 				<input type="text" id="password" name="password" placeholder="Password" class="form-control input-lg" value="<?php echo $row['password']; ?>" required />
 			</div>
 			<div class="form-group col-md-3">
-			<button type="button" class="btn btn-primary update" id="<?php echo $row['id']; ?>" name="add">Update Record</button>
+			<button type="button" class="btn btn-primary update" id="<?php echo $row['id']; ?>" name="update">Update Record</button>
 			<button type="button" href="javascript:void(0);" class="btn btn-default" id="cancel" name="add" onclick="$('#link-add').slideUp(400);">Cancel</button>
 		</div>
 	<?php
