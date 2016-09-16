@@ -3,7 +3,7 @@
 	require_once('dbconfig.php');
 	global $con;
 	
-	$query = "SELECT * FROM userinfo";
+	$query = "SELECT * FROM userinfo order by id DESC";
 	$result = mysqli_query($con, $query);
 	$rows = mysqli_affected_rows($con);
 	if($rows == 0)
