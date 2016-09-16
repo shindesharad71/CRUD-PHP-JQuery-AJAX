@@ -1,0 +1,6 @@
+{
+  "name": "Crud-php-jquery-ajax",
+  "tagline": "Basic Create Read Update Delete operations using JQuery AJAX with PHP MySQLi ",
+  "body": "# CRUD-PHP-JQuery-AJAX\r\n\r\n### Basic Create Read Update Delete operations using JQuery AJAX with PHP MySQLi \r\n\r\n### :pushpin: Resources Used while Making\r\n* PHP\r\n* Bootstrap\r\n* JQuery\r\n\r\n### :pushpin: Installation\r\n\r\nrequires PHP 5.6+\r\n\r\nExport **CRUP-db.sql** file in your database.\r\n\r\nAdd Your Database Details in **dbconfig.php** file.\r\n\r\n```php\r\n\r\n\r\n\t$hostname = 'localhost'; \t// Host Name\r\n\t\r\n\t$user = 'root'; // username of host\r\n\t\r\n\t$password = ''; // password of host\r\n\t\r\n\t$dbname = ''; \t//database name\r\n\r\n\r\n```\r\n\r\n### :pushpin: Version\r\n\r\n#### v1.0\r\n* released on 17-9-2016\r\n\r\n\r\n:pushpin: License\r\n----\r\n\r\nMIT\r\n\r\n\r\n**Free Software, Hell Yeah!**\r\n\r\n\r\n( readme updated on 17-9-2016 )\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

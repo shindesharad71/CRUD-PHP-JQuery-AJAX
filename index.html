@@ -1,53 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Crud-php-jquery-ajax by shindesharad71</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Crud-php-jquery-ajax</h1>
+      <h2 class="project-tagline">Basic Create Read Update Delete operations using JQuery AJAX with PHP MySQLi </h2>
+      <a href="https://github.com/shindesharad71/CRUD-PHP-JQuery-AJAX" class="btn">View on GitHub</a>
+      <a href="https://github.com/shindesharad71/CRUD-PHP-JQuery-AJAX/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/shindesharad71/CRUD-PHP-JQuery-AJAX/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-<head>
-    <title>CRUD JQuery</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
-</head>
+    <section class="main-content">
+      <h1>
+<a id="crud-php-jquery-ajax" class="anchor" href="#crud-php-jquery-ajax" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CRUD-PHP-JQuery-AJAX</h1>
 
-<body>
-    <div class="container-fluid" style="padding: 0px; margin: 0px;">
-        <div class="jumbotron">
-            <h1 class="text-center">CRUD Oprations Using JQuery AJAX</h1>
-            <div class="container" style="padding-top: 25px;">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="pull-right">
-                            <button class="btn btn-success btn-lg" id="show-add">Add New Record</button>
-                        </div>
-                        <div id="link-add" class="form-inline">
-                            <div class="form-group col-md-3">
-                                <input type="text" name="name" id="name" placeholder="Name" class="form-control input-lg" required />
-                            </div>
-                            <div class="form-group col-md-3">
-                                <input type="text" name="username" id="username" placeholder="Username" class="form-control input-lg" required/>
-                            </div>
-                            <div class="form-group col-md-3">
-                                <input type="text" id="password" name="password" placeholder="Password" class="form-control input-lg" required />
-                            </div>
-                            <div class="form-group col-md-3">
-                                <button type="button" class="btn btn-lg btn-primary" id="add" name="add">Add Record</button>
-                                <button type="button" href="javascript:void(0);" class="btn btn-lg btn-default" id="cancel" name="add" onclick="$('#link-add').slideUp(400);$('#show-add').show(600);">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="records_content"></div>
-                        <br>
-                        <div id="table_content">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="js/jquery-2.2.0.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-</body>
+<h3>
+<a id="basic-create-read-update-delete-operations-using-jquery-ajax-with-php-mysqli" class="anchor" href="#basic-create-read-update-delete-operations-using-jquery-ajax-with-php-mysqli" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Create Read Update Delete operations using JQuery AJAX with PHP MySQLi</h3>
 
+<h3>
+<a id="pushpin-resources-used-while-making" class="anchor" href="#pushpin-resources-used-while-making" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji alias="pushpin" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4cc.png">📌</g-emoji> Resources Used while Making</h3>
+
+<ul>
+<li>PHP</li>
+<li>Bootstrap</li>
+<li>JQuery</li>
+</ul>
+
+<h3>
+<a id="pushpin-installation" class="anchor" href="#pushpin-installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji alias="pushpin" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4cc.png">📌</g-emoji> Installation</h3>
+
+<p>requires PHP 5.6+</p>
+
+<p>Export <strong>CRUP-db.sql</strong> file in your database.</p>
+
+<p>Add Your Database Details in <strong>dbconfig.php</strong> file.</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"></span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$hostname</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>localhost<span class="pl-pds">'</span></span>;    <span class="pl-c">// Host Name</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$user</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>root<span class="pl-pds">'</span></span>; <span class="pl-c">// username of host</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$password</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>; <span class="pl-c">// password of host</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1">    <span class="pl-smi">$dbname</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>;   <span class="pl-c">//database name</span></span>
+<span class="pl-s1"></span>
+<span class="pl-s1"></span></pre></div>
+
+<h3>
+<a id="pushpin-version" class="anchor" href="#pushpin-version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji alias="pushpin" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4cc.png">📌</g-emoji> Version</h3>
+
+<h4>
+<a id="v10" class="anchor" href="#v10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>v1.0</h4>
+
+<ul>
+<li>released on 17-9-2016</li>
+</ul>
+
+<h2>
+<a id="pushpin-license" class="anchor" href="#pushpin-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><g-emoji alias="pushpin" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4cc.png">📌</g-emoji> License</h2>
+
+<p>MIT</p>
+
+<p><strong>Free Software, Hell Yeah!</strong></p>
+
+<p>( readme updated on 17-9-2016 )</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/shindesharad71/CRUD-PHP-JQuery-AJAX">Crud-php-jquery-ajax</a> is maintained by <a href="https://github.com/shindesharad71">shindesharad71</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
 </html>
