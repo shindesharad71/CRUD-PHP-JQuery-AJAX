@@ -13,7 +13,7 @@
 	}
 
 	?>
-	<table class="table table-striped">
+	<table class="table table-bordered">
 		<tr class="info">
 			<th>ID</th>
 			<th>Name</th>

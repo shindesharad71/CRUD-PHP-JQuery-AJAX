@@ -20,13 +20,13 @@
 		?>
 		<div class="form-inline" id="edit-data">
 			<div class="form-group col-md-3">
-				<input type="text" name="name" id="name" value="<?php echo $row['name']; ?>" placeholder="Name" class="form-control input-lg" required />
+				<input type="text" name="name" id="name" value="<?php echo $row['name']; ?>" placeholder="Name" class="form-control" required />
 			</div>
 			<div class="form-group col-md-3">
-				<input type="text" name="username" id="username" placeholder="Username" class="form-control input-lg" value="<?php echo $row['username']; ?>" required/>
+				<input type="text" name="username" id="username" placeholder="Username" class="form-control" value="<?php echo $row['username']; ?>" required/>
 			</div>
 			<div class="form-group col-md-3">
-				<input type="text" id="password" name="password" placeholder="Password" class="form-control input-lg" value="<?php echo $row['password']; ?>" required />
+				<input type="text" id="password" name="password" placeholder="Password" class="form-control" value="<?php echo $row['password']; ?>" required />
 			</div>
 			<div class="form-group col-md-3">
 			<button type="button" class="btn btn-primary update" id="<?php echo $row['id']; ?>" name="update">Update Record</button>

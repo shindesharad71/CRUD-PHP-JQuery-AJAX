@@ -9,9 +9,16 @@
 
 	if(!empty($name) && !empty($username) && !empty($password))
 	{
-		$query = "INSERT into userinfo (name, username, password) VALUES ('$name', '$username', '$password')";
-		if (!$result = mysqli_query($con, $query)) {
-	        exit(mysqli_error($con));
+		$query = $con->prepare("INSERT into userinfo (name, username, password) VALUES (?,?,?)");
+
+		$query->bind_param('sss',$name,$username,$password);
+
+		$result = $query->execute();
+
+		if($result) 
+		{
+	        echo '<div class="col-md-offset-4 col-md-5 text-center alert alert-success">1 Record Added!</div>';
 	    }
-	    echo '<div class="col-md-offset-4 col-md-5 text-center alert alert-success">1 Record Added!</div>';
+	    else
+	    	exit(mysqli_error($con));    
 	}

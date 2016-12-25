@@ -2,7 +2,7 @@
 
 	global $con;
 
-	$con = mysqli_connect('localhost','root','','db');
+	$con = mysqli_connect('localhost','root','','crud-ajax');
 
 	if(!$con)
 	{
