@@ -2,16 +2,11 @@
 
 	require_once('dbconfig.php');
 	global $con;
-	
-	$query = "SELECT * FROM userinfo order by id DESC";
-	$result = mysqli_query($con, $query);
-	$rows = mysqli_affected_rows($con);
-	if($rows == 0)
-	{
-		echo '<div class="text-center">no records found! click on add button to add records</div>';
-		die();
-	}
 
+	$query = $con->prepare("SELECT * FROM userinfo order by id DESC");
+	$query->execute();
+	mysqli_stmt_bind_result($query, $id, $name, $username, $password);
+	
 	?>
 	<table class="table table-bordered">
 		<tr class="info">
@@ -23,18 +18,19 @@
 		</tr>
 	<?php
 
-	while($row = mysqli_fetch_assoc($result))
+	while(mysqli_stmt_fetch($query))
 	{
 		echo '
 		<tr>
-			<td>'.$row['id'].'</td>
-			<td>'.$row['name'].'</td>
-			<td>'.$row['username'].'</td>
-			<td>'.$row['password'].'</td>
-			<td><button id="'.$row['id'].'" class="edit btn btn-info">Edit</button> <button class="del btn btn-danger" id="'.$row['id'].'">Delete</button></td>
+			<td>'.$id.'</td>
+			<td>'.$name.'</td>
+			<td>'.$username.'</td>
+			<td>'.$password.'</td>
+			<td><button id="'.$id.'" class="edit btn btn-info">Edit</button> <button class="del btn btn-danger" id="'.$id.'">Delete</button></td>
 		</tr>';
 	}
 		echo '</table>';
+	
 ?>
 <script type="text/javascript">
 	$('.del').click(function() {
