@@ -9,7 +9,7 @@
 
 ### :pushpin: Installation
 
-requires PHP 5.6+
+requires ```PHP 5.6+```
 
 Export **CRUP-db.sql** file in your database.
 
